@@ -36,7 +36,7 @@ offset_bottom = 720.0
 color = Color(0.21176471, 0.19215687, 0.1764706, 1)
 metadata/_edit_lock_ = true
 
-[node name="itemsButton" type="Button" parent="." unique_id=536516039]
+[node name="backButton" type="Button" parent="." unique_id=536516039]
 offset_left = -4.0
 offset_top = 638.0
 offset_right = 251.31914
@@ -71,8 +71,8 @@ script = ExtResource("7_me031")
 [node name="buttonHover" type="AudioStreamPlayer2D" parent="." unique_id=2004370175]
 stream = ExtResource("8_4pu7h")
 
-[connection signal="mouse_entered" from="itemsButton" to="." method="_on_items_button_mouse_entered"]
-[connection signal="pressed" from="itemsButton" to="." method="_on_items_button_pressed"]
+[connection signal="mouse_entered" from="backButton" to="." method="_on_items_button_mouse_entered"]
+[connection signal="pressed" from="backButton" to="." method="_on_items_button_pressed"]
 [connection signal="mouse_entered" from="backpackButton" to="backpackButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="backpackButton" to="backpackButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="backpackButton" to="." method="_on_backpack_button_pressed"]

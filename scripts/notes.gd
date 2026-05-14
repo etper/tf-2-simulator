@@ -5,11 +5,10 @@ extends Node
 #settings
 #drop item
 #backpack
-	#make inventory database - check?
-	#make player inventory system
-	#make displaying ui
+	#make debug system to easily add/remove items
 #crafting
 #mann co catalog
 #trading
 #war paints
 #class loadouts
+#make all buttons do hover and click sounds, one script for all

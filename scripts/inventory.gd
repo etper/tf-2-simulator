@@ -1,11 +1,13 @@
 extends Node
 
-var items = []
+var items : Array[Dictionary] = []
 
 func _ready():
-	return
+	add_item("1")
+	add_item("1")
 
-func add_item(item_name):
-	items.append(item_name)
-	print("New item: " + item_name)
-	print("Inventory so far: " + str(items))
+func add_item(item_id : String, amount := 1):
+	items.append({
+		"id": item_id,
+		"amount": amount
+	})

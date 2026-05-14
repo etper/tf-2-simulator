@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://b04m6jpvew50q"]
 
+[ext_resource type="Script" uid="uid://boe8djw4yhtsa" path="res://scenes/backpack.gd" id="1_fytde"]
 [ext_resource type="Script" uid="uid://cw8cyn54jhpsf" path="res://scripts/node_2d.gd" id="1_q7lps"]
 [ext_resource type="PackedScene" uid="uid://cb2cyqsyvbgdb" path="res://scenes/inventorySlot.tscn" id="2_5gcru"]
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://tf2build.ttf" id="3_8usr3"]
+[ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="4_fytde"]
 
 [node name="Backpack" type="Control" unique_id=2044800232]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_fytde")
 
 [node name="light" type="ColorRect" parent="." unique_id=146856309]
 layout_mode = 0
@@ -44,3 +48,20 @@ columns = 10
 [node name="Node2D" type="Node2D" parent="." unique_id=67417743]
 script = ExtResource("1_q7lps")
 slot_scene = ExtResource("2_5gcru")
+
+[node name="backButton" type="Button" parent="." unique_id=267926184]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 638.0
+offset_right = 251.31914
+offset_bottom = 738.0
+theme_override_colors/icon_hover_color = Color(0.7058824, 0.24313726, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("3_8usr3")
+theme_override_font_sizes/font_size = 38
+text = "<< BACK"
+icon = ExtResource("4_fytde")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]
