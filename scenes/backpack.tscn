@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cb2cyqsyvbgdb" path="res://scenes/inventorySlot.tscn" id="2_5gcru"]
 [ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="3_8usr3"]
 [ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="4_fytde"]
+[ext_resource type="AudioStream" uid="uid://chpmubfd1lo40" path="res://sfx/sell.wav" id="6_yov5u"]
 
 [node name="Backpack" type="Control" unique_id=2044800232]
 layout_mode = 3
@@ -63,5 +64,9 @@ icon = ExtResource("4_fytde")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="money" type="AudioStreamPlayer2D" parent="." unique_id=1403845660]
+position = Vector2(0, 64)
+stream = ExtResource("6_yov5u")
 
 [connection signal="pressed" from="backButton" to="." method="_on_back_button_pressed"]

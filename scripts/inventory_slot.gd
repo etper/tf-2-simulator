@@ -62,5 +62,30 @@ func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 
-			if inventory_index != -1:
-				Inventory.sell_item(inventory_index)
+			if inventory_index == -1:
+				return
+
+			var menu = PopupMenu.new()
+
+			add_child(menu)
+
+			var sell_price = item_data.value / 100.0
+
+			menu.add_item("Sell ($%.2f)" % sell_price, 0)
+
+			menu.position = Vector2i(
+				get_viewport().get_mouse_position()
+			)
+
+			menu.id_pressed.connect(_on_menu_option_selected.bind(menu))
+
+			menu.popup()
+
+func _on_menu_option_selected(id, menu):
+
+	match id:
+
+		0:
+			Inventory.sell_item(inventory_index)
+
+	menu.queue_free()

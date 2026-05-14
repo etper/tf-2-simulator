@@ -8,11 +8,19 @@ var credits : float = 0.0
 var items : Array[Dictionary] = []
 var pending_items : Array[Dictionary] = []
 
+var sell_sound = preload("res://sfx/sell.wav")
+
 func _ready():
 
 	var player = AudioStreamPlayer.new()
 	player.name = "NotificationPlayer"
 	player.stream = notification_sound
+	
+	var sell_player = AudioStreamPlayer.new()
+	sell_player.name = "SellPlayer"
+	sell_player.stream = sell_sound
+
+	add_child(sell_player)
 
 	add_child(player)
 
@@ -76,6 +84,8 @@ func sell_item(index : int):
 
 	if item_data:
 		credits += (item_data.value)/100.0
+
+		$SellPlayer.play()
 
 	items.remove_at(index)
 
