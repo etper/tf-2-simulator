@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://gfjtekgfmffq" path="res://sfx/tf2-button-click-hover.mp3" id="9_h73c4"]
 [ext_resource type="AudioStream" uid="uid://csoprh7u8n4ll" path="res://sfx/tf2-button-click.mp3" id="10_uui5l"]
 [ext_resource type="PackedScene" uid="uid://yu5nvyq8xmwa" path="res://scenes/alertIcon.tscn" id="11_uui5l"]
+[ext_resource type="PackedScene" uid="uid://dx5hvbhxjq8cm" path="res://scenes/moneyDisplay.tscn" id="14_kait0"]
 
 [node name="Main" type="Node2D" unique_id=524849054]
 script = ExtResource("1_r3g3c")
@@ -91,5 +92,9 @@ stream = ExtResource("10_uui5l")
 visible = false
 position = Vector2(1118, 101)
 
+[node name="MoneyDisplay" parent="." unique_id=1872372124 instance=ExtResource("14_kait0")]
+position = Vector2(1024, 656)
+
 [connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="findGameButton" to="." method="_on_find_game_button_pressed"]
 [connection signal="pressed" from="itemsButton" to="." method="_on_items_button_pressed"]

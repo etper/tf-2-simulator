@@ -32,18 +32,10 @@ func _ready():
 	update_alert()
 
 func _on_quit_button_pressed() -> void:
-	$buttonClick.play()
 	get_tree().quit()
 
 func _on_items_button_pressed() -> void:
-	$buttonClick.play()
 	get_tree().change_scene_to_file("res://scenes/items.tscn")
-
-func _on_items_button_mouse_entered() -> void:
-	$buttonHover.play()
-
-func _on_quit_button_mouse_entered() -> void:
-	$buttonHover.play()
 
 func update_alert():
 
@@ -53,3 +45,24 @@ func update_alert():
 
 	if count > 0:
 		alert_icon.get_node("Label").text = str(count)
+
+func _on_find_game_button_pressed() -> void:
+
+	print("Searching for match...")
+
+	# 35% chance to get an item
+	var drop_chance = 0.35
+
+	if randf() <= drop_chance:
+
+		var possible_items = [
+			"1" # scattergun
+		]
+
+		var random_item = possible_items.pick_random()
+
+		Inventory.add_item(random_item)
+
+		print("Item found!")
+	else:
+		print("No item drop.")
