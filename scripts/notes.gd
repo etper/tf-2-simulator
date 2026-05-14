@@ -4,13 +4,19 @@ extends Node
 #shop
 #settings
 #drop item
-#backpack
-	#make tooltip bg scale with the amount of text
 #crafting
 #mann co catalog
 #trading
 #war paints
 #class loadouts
+#crate system
+	#separate definitions from instances for items
+	#add item qualities
+	#color tooltips based on quality
+	#create crate definitions
+	#make loot table format in json
+	#make opening logic
+	#
 
 #ideas for feedback loop
 	# crate economy loop

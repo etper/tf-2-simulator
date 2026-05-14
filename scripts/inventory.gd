@@ -5,10 +5,10 @@ signal notifications_changed
 var notification_sound = preload("res://sfx/tf2-notification-sound.mp3")
 
 var credits : float = 0.0
-var items : Array[Dictionary] = []
-var pending_items : Array[Dictionary] = []
+var items : Array[ItemInstance] = []
+var pending_items : Array[ItemInstance] = []
 
-const SAVE_PATH = "user://savegame.json"
+const SAVE_PATH = "user://savegame2.json"
 
 var sell_sound = preload("res://sfx/sell.wav")
 
@@ -32,10 +32,12 @@ func _ready():
 
 func add_item(item_id : String, amount := 1):
 
-	pending_items.append({
-		"id": item_id,
-		"amount": amount
-	})
+	var item = ItemInstance.new()
+
+	item.definition_id = item_id
+	item.amount = amount
+
+	pending_items.append(item)
 
 	$NotificationPlayer.play()
 
@@ -60,7 +62,7 @@ func print_inventory():
 	print("=== INVENTORY ===")
 
 	for item in items:
-		var data = ItemDatabase.get_item(item["id"])
+		var data = item.get_definition()
 
 		if data:
 			print(data.display_name)
@@ -69,7 +71,7 @@ func remove_item_by_id(item_id : String):
 
 	for i in range(items.size() - 1, -1, -1):
 
-		if items[i]["id"] == item_id:
+		if items[i].definition_id == item_id:
 			items.remove_at(i)
 			inventory_changed.emit()
 			return
@@ -96,7 +98,7 @@ func sell_item(index : int):
 		return
 
 	var item_entry = items[index]
-	var item_data = ItemDatabase.get_item(item_entry["id"])
+	var item_data = item_entry.get_definition()
 
 	if item_data:
 		credits += (item_data.value)/100.0

@@ -23,8 +23,8 @@ func refresh_inventory():
 
 		if i < Inventory.items.size():
 
-			var item_data = Inventory.items[i]
-			var item = ItemDatabase.get_item(item_data["id"])
+			var item_instance = Inventory.items[i]
+			var item = item_instance.get_definition()
 
 			if item:
 				slot.set_item(item, i)

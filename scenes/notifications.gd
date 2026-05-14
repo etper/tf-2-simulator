@@ -15,8 +15,8 @@ func show_current_item():
 		get_tree().change_scene_to_file("res://scenes/items.tscn")
 		return
 
-	var item_data = Inventory.pending_items[0]
-	var item = ItemDatabase.get_item(item_data["id"])
+	var item_instance = Inventory.pending_items[0]
+	var item = item_instance.get_definition()
 
 	icon.texture = item.icon
 
