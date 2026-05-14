@@ -27,6 +27,6 @@ func refresh_inventory():
 			var item = item_instance.get_definition()
 
 			if item:
-				slot.set_item(item, i)
+				slot.set_item(item_instance, i)
 
 		grid.add_child(slot)

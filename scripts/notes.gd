@@ -10,8 +10,8 @@ extends Node
 #war paints
 #class loadouts
 #crate system
-	#separate definitions from instances for items
-	#add item qualities
+	#separate definitions from instances for items [check]
+	#add item qualities [check]
 	#color tooltips based on quality
 	#create crate definitions
 	#make loot table format in json

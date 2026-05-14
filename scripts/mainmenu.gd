@@ -61,7 +61,9 @@ func _on_find_game_button_pressed() -> void:
 
 		var random_item = possible_items.pick_random()
 
-		Inventory.add_item(random_item)
+		var quality = Inventory.roll_quality()
+
+		Inventory.add_item(random_item, 1, quality)
 
 		print("Item found!")
 	else:

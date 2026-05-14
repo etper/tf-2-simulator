@@ -20,7 +20,16 @@ func show_current_item():
 
 	icon.texture = item.icon
 
-	label.text = item.display_name
+	var quality_data = Inventory.QUALITIES.get(item_instance.quality)
+
+	if quality_data:
+		label.modulate = quality_data.color
+		label.text = "%s %s" % [
+			quality_data.display,
+			item.display_name
+		]
+	else:
+		label.text = item.display_name
 
 	description_label.text = item.description
 

@@ -6,9 +6,21 @@ extends Panel
 @onready var bg = $ColorRect
 @onready var vbox = $VBoxContainer
 
-func set_item(item : ItemData):
+func set_item(item : ItemData, instance : ItemInstance):
+	
+	var quality_data = Inventory.QUALITIES.get(instance.quality)
+	
+	if quality_data:
+		name_label.modulate = quality_data.color
 
-	name_label.text = item.display_name
+	if quality_data:
+		name_label.modulate = quality_data.color
+		name_label.text = "%s %s" % [
+			quality_data.display,
+			item.display_name
+		]
+	else:
+		name_label.text = item.display_name
 
 	description_label.text = item.description
 

@@ -1,5 +1,6 @@
 extends Panel
 
+var item_instance : ItemInstance
 var item_data : ItemData
 var tooltip_scene = preload("res://scenes/item_tooltip.tscn")
 
@@ -12,10 +13,14 @@ var hover_style : StyleBoxFlat
 
 @onready var bg = $bgColor
 
-func set_item(item : ItemData, index : int):
-	item_data = item
+func set_item(instance : ItemInstance, index : int):
+
+	item_instance = instance
+	item_data = instance.get_definition()
+
 	inventory_index = index
-	$iconDisplay.texture = item.icon
+
+	$iconDisplay.texture = item_data.icon
 
 func _ready():
 
@@ -48,7 +53,7 @@ func _on_mouse_entered():
 
 	get_tree().current_scene.add_child(tooltip)
 
-	tooltip.set_item(item_data)
+	tooltip.set_item(item_data, item_instance)
 
 func _on_mouse_exited():
 

@@ -4,11 +4,34 @@ signal inventory_changed
 signal notifications_changed
 var notification_sound = preload("res://sfx/tf2-notification-sound.mp3")
 
+const QUALITIES = {
+	"normal": {
+		"display": "Normal",
+		"color": Color("b2b2b2")
+	},
+	"unique": {
+		"display": "Unique",
+		"color": Color("ffd700")
+	},
+	"strange": {
+		"display": "Strange",
+		"color": Color("cf6a32")
+	},
+	"vintage": {
+		"display": "Vintage",
+		"color": Color("476291")
+	},
+	"unusual": {
+		"display": "Unusual",
+		"color": Color("8650ac")
+	}
+}
+
 var credits : float = 0.0
 var items : Array[ItemInstance] = []
 var pending_items : Array[ItemInstance] = []
 
-const SAVE_PATH = "user://savegame3.json"
+const SAVE_PATH = "D:/savegame.json"
 
 var sell_sound = preload("res://sfx/sell.wav")
 
@@ -30,12 +53,13 @@ func _ready():
 	
 	add_item("2")
 
-func add_item(item_id : String, amount := 1):
+func add_item(item_id : String, amount := 1, quality := "unique"):
 
 	var item = ItemInstance.new()
 
 	item.definition_id = item_id
 	item.amount = amount
+	item.quality = quality
 
 	pending_items.append(item)
 
@@ -148,7 +172,6 @@ func save_game():
 	if file:
 		file.store_string(JSON.stringify(save_data))
 
-
 func load_game():
 
 	if not FileAccess.file_exists(SAVE_PATH):
@@ -202,3 +225,18 @@ func load_game():
 
 	inventory_changed.emit()
 	notifications_changed.emit()
+
+func roll_quality() -> String:
+
+	var roll = randf()
+
+	if roll <= 0.01:
+		return "unusual"
+
+	if roll <= 0.05:
+		return "strange"
+
+	if roll <= 0.10:
+		return "vintage"
+
+	return "unique"
