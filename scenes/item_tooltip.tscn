@@ -9,7 +9,6 @@
 script = ExtResource("1_3gh8j")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=762587689]
-custom_minimum_size = Vector2(512, 128)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -19,6 +18,7 @@ color = Color(0.16862746, 0.15294118, 0.13333334, 1)
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 128.0
+theme_override_constants/separation = 4
 alignment = 1
 
 [node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=183721091]
