@@ -75,3 +75,4 @@ stream = ExtResource("8_4pu7h")
 [connection signal="pressed" from="itemsButton" to="." method="_on_items_button_pressed"]
 [connection signal="mouse_entered" from="backpackButton" to="backpackButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="backpackButton" to="backpackButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="backpackButton" to="." method="_on_backpack_button_pressed"]

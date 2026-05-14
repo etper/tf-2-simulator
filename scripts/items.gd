@@ -7,3 +7,8 @@ func _on_items_button_pressed() -> void:
 
 func _on_items_button_mouse_entered() -> void:
 	$buttonHover.play()
+
+
+func _on_backpack_button_pressed() -> void:
+	$buttonClick.play()
+	get_tree().change_scene_to_file("res://scenes/backpack.tscn")
