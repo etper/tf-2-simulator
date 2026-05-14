@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b5pyqh2ifbx7f"]
+
+[ext_resource type="Script" uid="uid://dddbpcqs2a0m6" path="res://scenes/canvas_layer.gd" id="1_k7vlk"]
+
+[node name="DebugConsole" type="Node2D" unique_id=1460562308]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1778527515]
+script = ExtResource("1_k7vlk")
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=609540343]
+offset_left = 112.0
+offset_top = 58.0
+offset_right = 428.0
+offset_bottom = 138.0
+placeholder_text = "seeeeex"
+keep_editing_on_text_submit = true
+
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="CanvasLayer" method="_on_line_edit_text_submitted"]

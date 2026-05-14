@@ -20,6 +20,7 @@ config/icon="res://sprites/icon.svg"
 Global="*uid://cwu283bb4h7tn"
 Inventory="*uid://d1yldpqlieelf"
 ItemDatabase="*uid://cqhfbv2lhn83e"
+DebugConsole="*uid://b5pyqh2ifbx7f"
 
 [display]
 

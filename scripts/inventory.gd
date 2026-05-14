@@ -1,5 +1,7 @@
 extends Node
 
+signal inventory_changed
+
 var items : Array[Dictionary] = []
 
 func _ready():
@@ -11,6 +13,8 @@ func add_item(item_id : String, amount := 1):
 		"id": item_id,
 		"amount": amount
 	})
+	
+	inventory_changed.emit()
 
 func remove_item(index : int):
 	if index >= 0 and index < items.size():
@@ -18,6 +22,8 @@ func remove_item(index : int):
 
 func clear_inventory():
 	items.clear()
+	
+	inventory_changed.emit()
 
 func print_inventory():
 	print("=== INVENTORY ===")
@@ -27,3 +33,12 @@ func print_inventory():
 
 		if data:
 			print(data.display_name)
+
+func remove_item_by_id(item_id : String):
+
+	for i in range(items.size() - 1, -1, -1):
+
+		if items[i]["id"] == item_id:
+			items.remove_at(i)
+			inventory_changed.emit()
+			return

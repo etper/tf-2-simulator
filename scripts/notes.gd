@@ -5,7 +5,6 @@ extends Node
 #settings
 #drop item
 #backpack
-	#make debug system to easily add/remove items
 #crafting
 #mann co catalog
 #trading
