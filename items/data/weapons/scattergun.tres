@@ -1,14 +1,13 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://k2ugof4cybwm"]
 
-[ext_resource type="Texture2D" uid="uid://d31k58lfenr17" path="res://sprites/items/scattergun.png" id="1_3v7xx"]
-[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="1_5c4u8"]
+[ext_resource type="Texture2D" uid="uid://d31k58lfenr17" path="res://sprites/items/scattergun.png" id="1_tskwq"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_35gtt"]
 
 [resource]
-script = ExtResource("1_5c4u8")
+script = ExtResource("2_35gtt")
 id = "1"
 display_name = "Scattergun"
 description = "Level 1 Scattergun"
-icon = ExtResource("1_3v7xx")
+icon = ExtResource("1_tskwq")
 max_stack = 1
-tags = Array[String](["\"weapon\""])
 metadata/_custom_type_script = "uid://46qbk44kgkpo"
