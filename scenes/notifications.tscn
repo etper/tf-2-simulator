@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cd2dmh7dbmm7d"]
+
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="1_3wsod"]
+[ext_resource type="Script" uid="uid://blg4k5y7o62ow" path="res://scenes/notifications.gd" id="1_lr2v4"]
+[ext_resource type="FontFile" uid="uid://b20ca30dpjlu8" path="res://fonts/TF2.ttf" id="3_6rp3f"]
+[ext_resource type="FontFile" uid="uid://d2rj8s8y6fybv" path="res://fonts/TF2secondary.ttf" id="4_da434"]
+[ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="5_da434"]
+
+[node name="Notifications" type="Control" unique_id=335216067]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lr2v4")
+
+[node name="light" type="ColorRect" parent="." unique_id=1923100039]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 1280.0
+offset_bottom = 739.0
+color = Color(0.16862746, 0.15294118, 0.14117648, 1)
+metadata/_edit_lock_ = true
+
+[node name="newItem" type="Label" parent="." unique_id=633960216]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("1_3wsod")
+theme_override_font_sizes/font_size = 58
+text = "NEW ITEM ACQUIRED!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=689264807]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 576.0
+alignment = 1
+
+[node name="ItemName" type="Label" parent="VBoxContainer" unique_id=1774911031]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.83137256, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("1_3wsod")
+theme_override_font_sizes/font_size = 31
+text = "Rocket launcher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=1054305211]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41568628, 0.38039216, 0.32941177, 1)
+theme_override_fonts/font = ExtResource("3_6rp3f")
+theme_override_font_sizes/font_size = 31
+text = "Level 1 Rocket Launcher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer" unique_id=862497300]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_da434")
+theme_override_font_sizes/font_size = 31
+text = "Can pew pew"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=406326476]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 640.0
+offset_bottom = 576.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="claimButton" type="Button" parent="." unique_id=775053271]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 608.0
+offset_right = 824.0
+offset_bottom = 708.0
+theme_override_colors/icon_hover_color = Color(0.7058824, 0.24313726, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("1_3wsod")
+theme_override_font_sizes/font_size = 29
+text = "CLAIM"
+icon = ExtResource("5_da434")
+flat = true
+text_overrun_behavior = 1
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="claimButton" to="." method="_on_claim_button_pressed"]

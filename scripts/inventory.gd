@@ -1,20 +1,33 @@
 extends Node
 
 signal inventory_changed
+signal notifications_changed
+var notification_sound = preload("res://sfx/tf2-notification-sound.mp3")
 
 var items : Array[Dictionary] = []
+var pending_items : Array[Dictionary] = []
 
 func _ready():
+
+	var player = AudioStreamPlayer.new()
+	player.name = "NotificationPlayer"
+	player.stream = notification_sound
+
+	add_child(player)
+
 	add_item("1")
 	add_item("1")
 
 func add_item(item_id : String, amount := 1):
-	items.append({
+
+	pending_items.append({
 		"id": item_id,
 		"amount": amount
 	})
-	
-	inventory_changed.emit()
+
+	$NotificationPlayer.play()
+
+	notifications_changed.emit()
 
 func remove_item(index : int):
 	if index >= 0 and index < items.size():
@@ -42,3 +55,15 @@ func remove_item_by_id(item_id : String):
 			items.remove_at(i)
 			inventory_changed.emit()
 			return
+
+func claim_next_item():
+
+	if pending_items.is_empty():
+		return
+
+	var item = pending_items.pop_front()
+
+	items.append(item)
+
+	inventory_changed.emit()
+	notifications_changed.emit()

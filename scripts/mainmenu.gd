@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var alert_icon = $AlertIcon
+
 var backgrounds = [
 	"res://sprites/bgs/2fortbg.png",
 	"res://sprites/bgs/upwardbg.png",
@@ -25,6 +27,9 @@ func _ready():
 	
 	$hero.texture = load(random_hero)
 	$backgroundMap.texture = load(random_bg)
+	
+	Inventory.notifications_changed.connect(update_alert)
+	update_alert()
 
 func _on_quit_button_pressed() -> void:
 	$buttonClick.play()
@@ -39,3 +44,12 @@ func _on_items_button_mouse_entered() -> void:
 
 func _on_quit_button_mouse_entered() -> void:
 	$buttonHover.play()
+
+func update_alert():
+
+	var count = Inventory.pending_items.size()
+
+	alert_icon.visible = count > 0
+
+	if count > 0:
+		alert_icon.get_node("Label").text = str(count)
