@@ -5,14 +5,16 @@ var tooltip_scene = preload("res://scenes/item_tooltip.tscn")
 
 var tooltip
 
+var inventory_index : int = -1
+
 var normal_style : StyleBoxFlat
 var hover_style : StyleBoxFlat
 
 @onready var bg = $bgColor
 
-func set_item(item : ItemData):
-
+func set_item(item : ItemData, index : int):
 	item_data = item
+	inventory_index = index
 	$iconDisplay.texture = item.icon
 
 func _ready():
@@ -54,3 +56,11 @@ func _on_mouse_exited():
 
 	if tooltip:
 		tooltip.queue_free()
+
+func _gui_input(event):
+
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+
+			if inventory_index != -1:
+				Inventory.sell_item(inventory_index)

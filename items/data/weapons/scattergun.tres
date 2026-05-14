@@ -10,4 +10,5 @@ display_name = "Scattergun"
 description = "Level 1 Scattergun"
 icon = ExtResource("1_3v7xx")
 max_stack = 1
+value = 25
 metadata/_custom_type_script = "uid://46qbk44kgkpo"

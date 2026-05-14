@@ -4,6 +4,7 @@ signal inventory_changed
 signal notifications_changed
 var notification_sound = preload("res://sfx/tf2-notification-sound.mp3")
 
+var credits : float = 0.0
 var items : Array[Dictionary] = []
 var pending_items : Array[Dictionary] = []
 
@@ -64,3 +65,18 @@ func claim_next_item():
 
 	inventory_changed.emit()
 	notifications_changed.emit()
+
+func sell_item(index : int):
+
+	if index < 0 or index >= items.size():
+		return
+
+	var item_entry = items[index]
+	var item_data = ItemDatabase.get_item(item_entry["id"])
+
+	if item_data:
+		credits += (item_data.value)/100.0
+
+	items.remove_at(index)
+
+	inventory_changed.emit()

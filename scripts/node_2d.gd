@@ -27,6 +27,6 @@ func refresh_inventory():
 			var item = ItemDatabase.get_item(item_data["id"])
 
 			if item:
-				slot.set_item(item)
+				slot.set_item(item, i)
 
 		grid.add_child(slot)
