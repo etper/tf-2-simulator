@@ -32,8 +32,17 @@ func parse_command(command : String):
 		"add":
 
 			if parts.size() > 1:
-				Inventory.add_item(parts[1])
-				print("Added items")
+
+				var item_id = parts[1]
+				var amount = 1
+
+				if parts.size() > 2:
+					amount = int(parts[2])
+
+				for i in range(amount):
+					Inventory.add_item(item_id)
+
+				print("Added %d of item %s" % [amount, item_id])
 
 		"remove":
 

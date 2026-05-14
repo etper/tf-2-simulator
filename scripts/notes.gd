@@ -2,6 +2,7 @@ extends Node
 
 #find game
 #shop
+	#buying keys
 #settings
 #drop item
 #crafting
@@ -15,7 +16,11 @@ extends Node
 	#color tooltips based on quality [check]
 	#create crate definitions [check]
 	#make loot table format in json [check]
-	#make opening logic
+	#make opening logic [check]
+	#make opening animation?
+	#make prices multiplier for different qualities
+	#make it so not all items can have certain qualities, eg nametag xD
+	#add the rest of mann co series!
 
 #ideas for feedback loop
 	# crate economy loop

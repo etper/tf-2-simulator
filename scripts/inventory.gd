@@ -273,15 +273,15 @@ func open_crate(index : int):
 			selected_item_id = crate_def.possible_drops[i]
 			break
 		
-		if selected_item_id == "":
-			return
+	if selected_item_id == "":
+		return
 
-		var quality = roll_quality()
+	var quality = roll_quality()
 
-		add_item(selected_item_id, 1, quality)
+	add_item(selected_item_id, 1, quality)
 
-		items.remove_at(index)
+	items.remove_at(index)
 
-		inventory_changed.emit()
+	inventory_changed.emit()
 
-		save_game()
+	save_game()

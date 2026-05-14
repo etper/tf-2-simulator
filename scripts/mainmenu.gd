@@ -56,7 +56,7 @@ func _on_find_game_button_pressed() -> void:
 	if randf() <= drop_chance:
 
 		var possible_items = [
-			"1" # scattergun
+			"2" # scattergun
 		]
 
 		var random_item = possible_items.pick_random()
