@@ -12,11 +12,10 @@ extends Node
 #crate system
 	#separate definitions from instances for items [check]
 	#add item qualities [check]
-	#color tooltips based on quality
-	#create crate definitions
-	#make loot table format in json
+	#color tooltips based on quality [check]
+	#create crate definitions [check]
+	#make loot table format in json [check]
 	#make opening logic
-	#
 
 #ideas for feedback loop
 	# crate economy loop

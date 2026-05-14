@@ -50,8 +50,6 @@ func _ready():
 	add_child(player)
 	
 	load_game()
-	
-	add_item("2")
 
 func add_item(item_id : String, amount := 1, quality := "unique"):
 
