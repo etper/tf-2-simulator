@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="8_wf3n4"]
 [ext_resource type="AudioStream" uid="uid://gfjtekgfmffq" path="res://sfx/tf2-button-click-hover.mp3" id="9_h73c4"]
 [ext_resource type="AudioStream" uid="uid://csoprh7u8n4ll" path="res://sfx/tf2-button-click.mp3" id="10_uui5l"]
+[ext_resource type="PackedScene" uid="uid://yu5nvyq8xmwa" path="res://scenes/alertIcon.tscn" id="11_uui5l"]
 
 [node name="Main" type="Node2D" unique_id=524849054]
 script = ExtResource("1_r3g3c")
@@ -70,6 +71,10 @@ stream = ExtResource("9_h73c4")
 
 [node name="buttonClick" type="AudioStreamPlayer2D" parent="." unique_id=319090582]
 stream = ExtResource("10_uui5l")
+
+[node name="AlertIcon" parent="." unique_id=474124718 instance=ExtResource("11_uui5l")]
+visible = false
+position = Vector2(1118, 101)
 
 [connection signal="mouse_entered" from="quitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://yu5nvyq8xmwa"]
+
+[ext_resource type="Texture2D" uid="uid://c5h3kgpo7ru7t" path="res://sprites/alert.png" id="1_jmoo2"]
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="2_rvjxl"]
+
+[node name="AlertIcon" type="Node2D" unique_id=474124718]
+
+[node name="Alert" type="Sprite2D" parent="." unique_id=387751072]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_jmoo2")
+
+[node name="Label" type="Label" parent="." unique_id=1405661739]
+offset_left = 6.0
+offset_top = -15.0
+offset_right = 17.0
+offset_bottom = 1.0
+theme_override_fonts/font = ExtResource("2_rvjxl")
+theme_override_font_sizes/font_size = 14
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
