@@ -15,9 +15,6 @@ func _ready():
 
 	add_child(player)
 
-	add_item("1")
-	add_item("1")
-
 func add_item(item_id : String, amount := 1):
 
 	pending_items.append({

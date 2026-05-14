@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b20ca30dpjlu8" path="res://fonts/TF2.ttf" id="3_6rp3f"]
 [ext_resource type="FontFile" uid="uid://d2rj8s8y6fybv" path="res://fonts/TF2secondary.ttf" id="4_da434"]
 [ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="5_da434"]
+[ext_resource type="Script" uid="uid://dli6jb2g81e4w" path="res://scripts/ui_button.gd" id="6_qvaot"]
 
 [node name="Notifications" type="Control" unique_id=335216067]
 layout_mode = 3
@@ -87,5 +88,6 @@ flat = true
 text_overrun_behavior = 1
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("6_qvaot")
 
 [connection signal="pressed" from="claimButton" to="." method="_on_claim_button_pressed"]

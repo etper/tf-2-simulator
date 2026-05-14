@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c5h3kgpo7ru7t" path="res://sprites/alert.png" id="1_jmoo2"]
 [ext_resource type="Script" uid="uid://braa7euiqlm4i" path="res://scenes/alert_icon.gd" id="1_knka8"]
 [ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="2_rvjxl"]
+[ext_resource type="Script" uid="uid://dli6jb2g81e4w" path="res://scripts/ui_button.gd" id="3_1d127"]
 
 [node name="AlertIcon" type="Node2D" unique_id=474124718]
 script = ExtResource("1_knka8")
@@ -13,9 +14,11 @@ offset_top = -19.999998
 offset_right = 415.0
 offset_bottom = 369.0
 scale = Vector2(0.1, 0.1)
+theme_override_colors/icon_hover_color = Color(0.62700343, 0.5622009, 0.42566282, 1)
 icon = ExtResource("1_jmoo2")
 flat = true
 icon_alignment = 1
+script = ExtResource("3_1d127")
 
 [node name="Label" type="Label" parent="." unique_id=1405661739]
 offset_left = 6.0

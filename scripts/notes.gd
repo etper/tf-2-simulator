@@ -10,4 +10,3 @@ extends Node
 #trading
 #war paints
 #class loadouts
-#make all buttons do hover and click sounds, one script for all
