@@ -17,8 +17,8 @@ func set_item(item : ItemData):
 	if item.tags.size() > 0:
 		stats += "Tags: " + ", ".join(item.tags) + "\n"
 
-	for key in item.metadata.keys():
-		stats += str(key) + ": " + str(item.metadata[key]) + "\n"
+	for value in item.metadata.values():
+		stats += str(value) + "\n"
 
 	stats_label.text = stats
 	
@@ -27,6 +27,12 @@ func set_item(item : ItemData):
 	await get_tree().process_frame
 
 	bg.size = vbox.get_combined_minimum_size() + Vector2(24, 24)
+	
+	var content_size = vbox.get_combined_minimum_size()
+
+	bg.size = content_size + Vector2(24, 24)
+
+	vbox.position = (bg.size - content_size) / 2
 
 func _process(delta):
 

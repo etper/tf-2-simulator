@@ -29,8 +29,8 @@ func show_current_item():
 	if item.tags.size() > 0:
 		stats += "Tags: " + ", ".join(item.tags) + "\n"
 
-	for key in item.metadata.keys():
-		stats += str(key) + ": " + str(item.metadata[key]) + "\n"
+	for value in item.metadata.values():
+		stats += str(value) + "\n"
 
 	stats_label.text = stats
 
