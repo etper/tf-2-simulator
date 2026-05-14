@@ -77,6 +77,9 @@ func _gui_input(event):
 			var sell_price = item_data.value / 100.0
 
 			menu.add_item("Sell ($%.2f)" % sell_price, 0)
+			
+			if item_data.crate_definition != null:
+				menu.add_item("Open Crate", 1)
 
 			menu.position = Vector2i(
 				get_viewport().get_mouse_position()
@@ -92,5 +95,8 @@ func _on_menu_option_selected(id, menu):
 
 		0:
 			Inventory.sell_item(inventory_index)
+		
+		1:
+			Inventory.open_crate(inventory_index)
 
 	menu.queue_free()

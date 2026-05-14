@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://8kdxg8xqj5av"]
+
+[ext_resource type="Texture2D" uid="uid://cy4fcj32n0g85" path="res://sprites/items/equalizer.png" id="1_wvk60"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_qkdnd"]
+
+[resource]
+script = ExtResource("2_qkdnd")
+id = "5"
+display_name = "The Equalizer"
+description = "Level 10 Pickaxe"
+icon = ExtResource("1_wvk60")
+max_stack = 1
+value = 25
+metadata/_custom_type_script = "uid://46qbk44kgkpo"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CrateDefinition" format=3 uid="uid://i2loajf06vjo"]
+
+[ext_resource type="Script" uid="uid://bqvhl6wg7lajp" path="res://scripts/CrateDefinition.gd" id="1_8ln5v"]
+
+[resource]
+script = ExtResource("1_8ln5v")
+series = 1
+display_name = "Mann Co. Supply Crate #1"
+possible_drops = Array[String](["3", "4", "5", "6", "7", "8", "9"])
+drop_weights = Array[float]([1.0])
+metadata/_custom_type_script = "uid://bqvhl6wg7lajp"

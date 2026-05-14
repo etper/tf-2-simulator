@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://p5vs6cxkqrb0"]
+
+[ext_resource type="Texture2D" uid="uid://bosv8sjhqmelq" path="res://sprites/items/oldgua.png" id="1_eng0b"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_60om1"]
+
+[resource]
+script = ExtResource("2_60om1")
+id = "7"
+display_name = "Old Guadalajara"
+description = "Level 10 Hat"
+icon = ExtResource("1_eng0b")
+max_stack = 1
+value = 499
+metadata = {
+"d": "This hat adds spice to any occasion"
+}
+metadata/_custom_type_script = "uid://46qbk44kgkpo"

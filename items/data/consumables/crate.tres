@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bfullqgq2d4gl"]
 
+[ext_resource type="Resource" uid="uid://i2loajf06vjo" path="res://items/crates/basic_crate.tres" id="1_orra3"]
 [ext_resource type="Texture2D" uid="uid://cvyv30nl4lo7n" path="res://sprites/items/manncocrate.png" id="1_wf3lg"]
 [ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_aifwj"]
 
 [resource]
 script = ExtResource("2_aifwj")
+crate_definition = ExtResource("1_orra3")
 id = "2"
 display_name = "Mann Co. Supply Crate"
 description = "Level 10 Supply Crate"

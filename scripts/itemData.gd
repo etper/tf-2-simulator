@@ -1,6 +1,8 @@
 extends Resource
 class_name ItemData
 
+@export var crate_definition : CrateDefinition
+
 @export var id : String
 @export var display_name : String
 @export_multiline var description : String

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://brwyeuogrtp5h"]
+
+[ext_resource type="Texture2D" uid="uid://bfanadi8alqp0" path="res://sprites/items/vitasaw.png" id="1_dwshg"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_bv4h0"]
+
+[resource]
+script = ExtResource("2_bv4h0")
+id = "3"
+display_name = "Vita-Saw"
+description = "Level 5 Bonesaw"
+icon = ExtResource("1_dwshg")
+max_stack = 1
+value = 25
+metadata/_custom_type_script = "uid://46qbk44kgkpo"

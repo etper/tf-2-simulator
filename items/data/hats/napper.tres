@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://34jewe3vsou4"]
+
+[ext_resource type="Texture2D" uid="uid://bljbux17e7v6l" path="res://sprites/items/napper.png" id="1_5wh6y"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_q7bem"]
+
+[resource]
+script = ExtResource("2_q7bem")
+id = "8"
+display_name = "Napper's Respite"
+description = "Level 10 Hat"
+icon = ExtResource("1_5wh6y")
+max_stack = 1
+value = 499
+metadata = {
+"d": "After a long day of burning scouts."
+}
+metadata/_custom_type_script = "uid://46qbk44kgkpo"

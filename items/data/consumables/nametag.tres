@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://drjrfw88thyiw"]
+
+[ext_resource type="Texture2D" uid="uid://bkosp3eehft3w" path="res://sprites/items/nametag.png" id="2_1b2wh"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="3_shcg1"]
+
+[resource]
+script = ExtResource("3_shcg1")
+id = "9"
+display_name = "Name Tag"
+description = "Level 1 Tool"
+icon = ExtResource("2_1b2wh")
+max_stack = 1
+value = 99
+metadata = {
+"desc1": "Changes the name of an item in your backpack"
+}
+metadata/_custom_type_script = "uid://46qbk44kgkpo"

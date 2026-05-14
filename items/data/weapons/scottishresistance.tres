@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bljhyyvun7054"]
+
+[ext_resource type="Texture2D" uid="uid://cp0q0dh8h0enk" path="res://sprites/items/scottish.png" id="1_fk136"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_ydmwo"]
+
+[resource]
+script = ExtResource("2_ydmwo")
+id = "6"
+display_name = "The Scottish Resistance"
+description = "Level 5 Stickybomb Launcher"
+icon = ExtResource("1_fk136")
+max_stack = 1
+value = 25
+metadata/_custom_type_script = "uid://46qbk44kgkpo"

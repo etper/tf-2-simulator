@@ -238,3 +238,50 @@ func roll_quality() -> String:
 		return "vintage"
 
 	return "unique"
+
+func open_crate(index : int):
+
+	if index < 0 or index >= items.size():
+		return
+
+	var crate_instance = items[index]
+	var crate_data = crate_instance.get_definition()
+
+	if crate_data == null:
+		return
+
+	if crate_data.crate_definition == null:
+		return
+	
+	var crate_def = crate_data.crate_definition
+
+	var total_weight = 0.0
+
+	for weight in crate_def.drop_weights:
+		total_weight += weight
+
+	var roll = randf() * total_weight
+	var current = 0.0
+
+	var selected_item_id = ""
+
+	for i in range(crate_def.possible_drops.size()):
+
+		current += crate_def.drop_weights[i]
+
+		if roll <= current:
+			selected_item_id = crate_def.possible_drops[i]
+			break
+		
+		if selected_item_id == "":
+			return
+
+		var quality = roll_quality()
+
+		add_item(selected_item_id, 1, quality)
+
+		items.remove_at(index)
+
+		inventory_changed.emit()
+
+		save_game()
