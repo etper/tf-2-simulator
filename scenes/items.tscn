@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://cln0rmbdiktbf"]
+
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://tf2build.ttf" id="1_sj0ge"]
+[ext_resource type="Script" uid="uid://dhxa48tjuk4yq" path="res://scripts/items.gd" id="1_trfxy"]
+[ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="2_trfxy"]
+[ext_resource type="AudioStream" uid="uid://csoprh7u8n4ll" path="res://sfx/tf2-button-click.mp3" id="4_d17p1"]
+[ext_resource type="Shader" uid="uid://d1g0haun05d1" path="res://shaders/items.gdshader" id="5_4ludf"]
+[ext_resource type="Texture2D" uid="uid://ya1vxcfjd38u" path="res://sprites/backpackIcon.png" id="5_me73k"]
+[ext_resource type="Script" uid="uid://c0whlres5r2xj" path="res://scripts/backpack_button.gd" id="7_me031"]
+[ext_resource type="AudioStream" uid="uid://gfjtekgfmffq" path="res://sfx/tf2-button-click-hover.mp3" id="8_4pu7h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_me031"]
+shader = ExtResource("5_4ludf")
+shader_parameter/saturation = 0.0
+
+[node name="Items" type="Node2D" unique_id=1205273345]
+script = ExtResource("1_trfxy")
+
+[node name="light" type="ColorRect" parent="." unique_id=1612167336]
+offset_top = 64.0
+offset_right = 1280.0
+offset_bottom = 656.0
+color = Color(0.16862746, 0.15294118, 0.14117648, 1)
+metadata/_edit_lock_ = true
+
+[node name="dark" type="ColorRect" parent="." unique_id=971528504]
+offset_right = 1280.0
+offset_bottom = 64.0
+color = Color(0.21176471, 0.19215687, 0.1764706, 1)
+metadata/_edit_lock_ = true
+
+[node name="dark2" type="ColorRect" parent="." unique_id=1243871312]
+offset_top = 656.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.21176471, 0.19215687, 0.1764706, 1)
+metadata/_edit_lock_ = true
+
+[node name="itemsButton" type="Button" parent="." unique_id=536516039]
+offset_left = -4.0
+offset_top = 638.0
+offset_right = 251.31914
+offset_bottom = 738.0
+theme_override_colors/icon_hover_color = Color(0.7058824, 0.24313726, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("1_sj0ge")
+theme_override_font_sizes/font_size = 38
+text = "<< BACK"
+icon = ExtResource("2_trfxy")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="buttonClick" type="AudioStreamPlayer2D" parent="." unique_id=466375892]
+stream = ExtResource("4_d17p1")
+
+[node name="backpackButton" type="Button" parent="." unique_id=164835367]
+material = SubResource("ShaderMaterial_me031")
+offset_left = 192.0
+offset_top = 331.0
+offset_right = 400.0
+offset_bottom = 607.0
+theme_override_fonts/font = ExtResource("1_sj0ge")
+theme_override_font_sizes/font_size = 33
+text = "BACKPACK"
+icon = ExtResource("5_me73k")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("7_me031")
+
+[node name="buttonHover" type="AudioStreamPlayer2D" parent="." unique_id=2004370175]
+stream = ExtResource("8_4pu7h")
+
+[connection signal="mouse_entered" from="itemsButton" to="." method="_on_items_button_mouse_entered"]
+[connection signal="pressed" from="itemsButton" to="." method="_on_items_button_pressed"]
+[connection signal="mouse_entered" from="backpackButton" to="backpackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="backpackButton" to="backpackButton" method="_on_mouse_exited"]

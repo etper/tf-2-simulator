@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b04m6jpvew50q"]
+
+[node name="Backpack" type="Node2D" unique_id=1580007821]
+
+[node name="light" type="ColorRect" parent="." unique_id=146856309]
+offset_top = 64.0
+offset_right = 1280.0
+offset_bottom = 656.0
+color = Color(0.16862746, 0.15294118, 0.14117648, 1)
+metadata/_edit_lock_ = true
+
+[node name="dark" type="ColorRect" parent="." unique_id=573653409]
+offset_right = 1280.0
+offset_bottom = 64.0
+color = Color(0.21176471, 0.19215687, 0.1764706, 1)
+metadata/_edit_lock_ = true
+
+[node name="dark2" type="ColorRect" parent="." unique_id=1659078881]
+offset_top = 656.0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.21176471, 0.19215687, 0.1764706, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1816693925]
+offset_left = 126.0
+offset_top = 151.0
+offset_right = 254.0
+offset_bottom = 247.0
+color = Color(0.2627451, 0.23529412, 0.20392157, 1)
