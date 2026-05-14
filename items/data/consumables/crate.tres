@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://1jyeon08gikk"]
+
+[ext_resource type="Texture2D" uid="uid://cvyv30nl4lo7n" path="res://sprites/items/manncocrate.png" id="1_wf3lg"]
+[ext_resource type="Script" uid="uid://46qbk44kgkpo" path="res://scripts/itemData.gd" id="2_aifwj"]
+
+[resource]
+script = ExtResource("2_aifwj")
+id = "2"
+display_name = "Mann Co. Supply Crate"
+description = "Level 10 Supply Crate"
+icon = ExtResource("1_wf3lg")
+max_stack = 1
+value = 10
+metadata = {
+"desc1": "You need a Mann Co. Supply Crate Key to open this.",
+"desc2": "You can pick one up at the Mann Co. Store"
+}
+metadata/_custom_type_script = "uid://46qbk44kgkpo"

@@ -5,6 +5,7 @@ extends Node
 #settings
 #drop item
 #backpack
+	#make tooltip bg scale with the amount of text
 #crafting
 #mann co catalog
 #trading

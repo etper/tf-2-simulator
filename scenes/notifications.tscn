@@ -63,6 +63,7 @@ theme_override_font_sizes/font_size = 31
 text = "Can pew pew"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="ItemIcon" type="TextureRect" parent="." unique_id=406326476]
 layout_mode = 0
