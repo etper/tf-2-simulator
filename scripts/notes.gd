@@ -5,7 +5,7 @@ extends Node
 #settings
 #drop item
 #backpack
-	#make inventory database
+	#make inventory database - check?
 	#make player inventory system
 	#make displaying ui
 #crafting

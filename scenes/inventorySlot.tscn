@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cb2cyqsyvbgdb"]
+
+[node name="InventorySlot" type="Panel" unique_id=1075054849]
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="bgColor" type="ColorRect" parent="." unique_id=1278565195]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0.2627451, 0.23529412, 0.20392157, 1)
+
+[node name="iconDisplay" type="TextureRect" parent="." unique_id=1445974472]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
