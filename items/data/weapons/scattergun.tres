@@ -10,5 +10,4 @@ display_name = "Scattergun"
 description = "Level 1 Scattergun"
 icon = ExtResource("1_3v7xx")
 max_stack = 1
-tags = Array[String](["\"weapon\""])
 metadata/_custom_type_script = "uid://46qbk44kgkpo"

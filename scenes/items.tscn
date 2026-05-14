@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cln0rmbdiktbf"]
 
-[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://tf2build.ttf" id="1_sj0ge"]
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="1_sj0ge"]
 [ext_resource type="Script" uid="uid://dhxa48tjuk4yq" path="res://scripts/items.gd" id="1_trfxy"]
 [ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="2_trfxy"]
 [ext_resource type="AudioStream" uid="uid://csoprh7u8n4ll" path="res://sfx/tf2-button-click.mp3" id="4_d17p1"]

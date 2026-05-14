@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cqxeb5xaa03d"]
+
+[ext_resource type="Script" uid="uid://kvusqjfoce4v" path="res://scenes/item_tooltip.gd" id="1_3gh8j"]
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="2_qwoq6"]
+[ext_resource type="FontFile" uid="uid://b20ca30dpjlu8" path="res://fonts/TF2.ttf" id="3_4168g"]
+[ext_resource type="FontFile" uid="uid://d2rj8s8y6fybv" path="res://fonts/TF2secondary.ttf" id="4_wu45x"]
+
+[node name="ItemTooltip" type="Panel" unique_id=1848474327]
+script = ExtResource("1_3gh8j")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=762587689]
+custom_minimum_size = Vector2(512, 128)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.16862746, 0.15294118, 0.13333334, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1449818282]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 128.0
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=183721091]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98039216, 0.83137256, 0.007843138, 1)
+theme_override_fonts/font = ExtResource("2_qwoq6")
+theme_override_font_sizes/font_size = 31
+text = "Rocket launcher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer" unique_id=686201234]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.41568628, 0.38039216, 0.32941177, 1)
+theme_override_fonts/font = ExtResource("3_4168g")
+theme_override_font_sizes/font_size = 31
+text = "Level 1 Rocket Launcher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer" unique_id=1010911524]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_wu45x")
+theme_override_font_sizes/font_size = 31
+text = "Can pew pew"
+horizontal_alignment = 1
+vertical_alignment = 1

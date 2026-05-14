@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b5pyqh2ifbx7f"]
 
-[ext_resource type="Script" uid="uid://dddbpcqs2a0m6" path="res://scenes/canvas_layer.gd" id="1_k7vlk"]
+[ext_resource type="Script" uid="uid://dddbpcqs2a0m6" path="res://scripts/canvas_layer.gd" id="1_k7vlk"]
 
 [node name="DebugConsole" type="Node2D" unique_id=1460562308]
 

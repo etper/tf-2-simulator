@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b04m6jpvew50q"]
 
-[ext_resource type="Script" uid="uid://boe8djw4yhtsa" path="res://scenes/backpack.gd" id="1_fytde"]
+[ext_resource type="Script" uid="uid://boe8djw4yhtsa" path="res://scripts/backpack.gd" id="1_fytde"]
 [ext_resource type="Script" uid="uid://cw8cyn54jhpsf" path="res://scripts/node_2d.gd" id="1_q7lps"]
 [ext_resource type="PackedScene" uid="uid://cb2cyqsyvbgdb" path="res://scenes/inventorySlot.tscn" id="2_5gcru"]
-[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://tf2build.ttf" id="3_8usr3"]
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="3_8usr3"]
 [ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="4_fytde"]
 
 [node name="Backpack" type="Control" unique_id=2044800232]

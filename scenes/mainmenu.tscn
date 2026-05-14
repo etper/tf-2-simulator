@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cdcub6rpy3hd5" path="res://sprites/heroes/hero1.png" id="3_3vvtq"]
 [ext_resource type="Texture2D" uid="uid://v0xuiwyf4ce0" path="res://sprites/logo.png" id="5_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://b8wf043peg6ct" path="res://sprites/quitIcon.png" id="6_7yvfd"]
-[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://tf2build.ttf" id="7_85riq"]
+[ext_resource type="FontFile" uid="uid://bsmnw4vfw05nt" path="res://fonts/tf2build.ttf" id="7_85riq"]
 [ext_resource type="Texture2D" uid="uid://cy7ody1aguthy" path="res://sprites/buttonBG.png" id="8_wf3n4"]
 [ext_resource type="AudioStream" uid="uid://gfjtekgfmffq" path="res://sfx/tf2-button-click-hover.mp3" id="9_h73c4"]
 [ext_resource type="AudioStream" uid="uid://csoprh7u8n4ll" path="res://sfx/tf2-button-click.mp3" id="10_uui5l"]
