@@ -8,7 +8,7 @@ var credits : float = 0.0
 var items : Array[ItemInstance] = []
 var pending_items : Array[ItemInstance] = []
 
-const SAVE_PATH = "user://savegame2.json"
+const SAVE_PATH = "user://savegame3.json"
 
 var sell_sound = preload("res://sfx/sell.wav")
 
@@ -113,16 +113,41 @@ func sell_item(index : int):
 
 func save_game():
 
+	var save_items = []
+	for item in items:
+		save_items.append({
+			"definition_id": item.definition_id,
+			"amount": item.amount,
+			"unique_id": item.unique_id,
+			"crate_series": item.crate_series,
+			"opened": item.opened,
+			"quality": item.quality,
+			"custom_name": item.custom_name
+		})
+
+	var save_pending = []
+	for item in pending_items:
+		save_pending.append({
+			"definition_id": item.definition_id,
+			"amount": item.amount,
+			"unique_id": item.unique_id,
+			"crate_series": item.crate_series,
+			"opened": item.opened,
+			"quality": item.quality,
+			"custom_name": item.custom_name
+		})
+
 	var save_data = {
 		"credits": credits,
-		"items": items,
-		"pending_items": pending_items
+		"items": save_items,
+		"pending_items": save_pending
 	}
 
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 
 	if file:
 		file.store_string(JSON.stringify(save_data))
+
 
 func load_game():
 
@@ -142,14 +167,37 @@ func load_game():
 		return
 
 	credits = data.get("credits", 0.0)
+
 	items.clear()
 
-	for item in data.get("items", []):
+	for item_data in data.get("items", []):
+
+		var item = ItemInstance.new()
+
+		item.definition_id = item_data.get("definition_id", "")
+		item.amount = item_data.get("amount", 1)
+		item.unique_id = item_data.get("unique_id", "")
+		item.crate_series = item_data.get("crate_series", 0)
+		item.opened = item_data.get("opened", false)
+		item.quality = item_data.get("quality", "normal")
+		item.custom_name = item_data.get("custom_name", "")
+
 		items.append(item)
 
 	pending_items.clear()
 
-	for item in data.get("pending_items", []):
+	for item_data in data.get("pending_items", []):
+
+		var item = ItemInstance.new()
+
+		item.definition_id = item_data.get("definition_id", "")
+		item.amount = item_data.get("amount", 1)
+		item.unique_id = item_data.get("unique_id", "")
+		item.crate_series = item_data.get("crate_series", 0)
+		item.opened = item_data.get("opened", false)
+		item.quality = item_data.get("quality", "normal")
+		item.custom_name = item_data.get("custom_name", "")
+
 		pending_items.append(item)
 
 	inventory_changed.emit()
