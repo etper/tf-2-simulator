@@ -5,6 +5,7 @@ extends Node
 #settings
 #drop item
 #backpack
+	#make inventory system
 #crafting
 #mann co catalog
 #trading
