@@ -5,6 +5,11 @@ var tooltip_scene = preload("res://scenes/item_tooltip.tscn")
 
 var tooltip
 
+var normal_style : StyleBoxFlat
+var hover_style : StyleBoxFlat
+
+@onready var bg = $bgColor
+
 func set_item(item : ItemData):
 
 	item_data = item
@@ -12,10 +17,27 @@ func set_item(item : ItemData):
 
 func _ready():
 
+	normal_style = StyleBoxFlat.new()
+	normal_style.bg_color = Color(0.2627451, 0.23529412, 0.20392157)
+
+	hover_style = StyleBoxFlat.new()
+	hover_style.bg_color = Color(0.2627451, 0.23529412, 0.20392157)
+
+	hover_style.border_width_left = 5
+	hover_style.border_width_top = 5
+	hover_style.border_width_right = 5
+	hover_style.border_width_bottom = 5
+
+	hover_style.border_color = Color(0.518, 0.463, 0.412, 1.0)
+
+	bg.add_theme_stylebox_override("panel", normal_style)
+
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
 func _on_mouse_entered():
+
+	bg.add_theme_stylebox_override("panel", hover_style)
 
 	if item_data == null:
 		return
@@ -26,9 +48,9 @@ func _on_mouse_entered():
 
 	tooltip.set_item(item_data)
 
-	tooltip.global_position = get_global_mouse_position() + Vector2(16, 16)
-
 func _on_mouse_exited():
+
+	bg.add_theme_stylebox_override("panel", normal_style)
 
 	if tooltip:
 		tooltip.queue_free()
